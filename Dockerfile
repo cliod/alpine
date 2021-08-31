@@ -1,8 +1,9 @@
 FROM alpine
 
-MAINTAINER cliod <qi2415@qq.com>
+MAINTAINER cliod <cliod@vistring.com>
 
-RUN apk add -U tzdata
+RUN apk update && apk add ca-certificates tzdata
 
 ENV TimeZone=Asia/Shanghai
 RUN cp /usr/share/zoneinfo/$TimeZone /etc/localtime && echo $TimeZone > /etc/timezone
+
